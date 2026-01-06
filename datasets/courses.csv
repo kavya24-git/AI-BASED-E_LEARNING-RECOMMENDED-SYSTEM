@@ -1,0 +1,50 @@
+course_id,title,category,tags,level
+1,Python Basics,Programming,python beginner intro,Beginner
+2,Advanced Python,Programming,python advanced functions,Intermediate
+3,Data Science with Python,Data Science,python data analysis machine-learning,Intermediate
+4,Machine Learning Basics,AI,machine-learning ai algorithms,Intermediate
+5,Deep Learning Fundamentals,AI,deep-learning neural-networks,Advanced
+6,Web Development HTML,Coding,html css web,Beginner
+7,JavaScript for Beginners,Programming,javascript web frontend,Beginner
+8,React JS Complete Guide,Programming,react javascript frontend,Intermediate
+9,Database Management,IT,sql database backend,Intermediate
+10,Cyber Security Basics,Security,cybersecurity network,Beginner
+11,Advanced Cyber Security,Security,penetration-testing hacking,Advanced
+12,SQL for Data Analysis,Data Science,sql data-analysis queries,Beginner
+13,Cloud Computing Basics,Cloud,aws cloud basics,Beginner
+14,AWS Solutions Architect,Cloud,aws advanced cloud computing,Advanced
+15,DevOps Foundations,DevOps,devops ci-cd automation,Intermediate
+16,Kotlin for Android,Mobile Development,kotlin android mobile-apps,Beginner
+17,Android App Development,Mobile Development,android java mobile ui,Intermediate
+18,UI/UX Design Principles,Design,design uiux figma wireframes,Beginner
+19,Artificial Intelligence Overview,AI,ai basics ml dl concepts,Beginner
+20,Natural Language Processing,NLP,nlp text-processing ai,Advanced
+21,Computer Vision Basics,AI,computer-vision image-processing,Intermediate
+22,TensorFlow for Beginners,AI,tensorflow deep-learning,Intermediate
+23,Pandas Data Analysis,Data Science,pandas python dataframes,Beginner
+24,Statistics for Data Science,Data Science,statistics probability data,Beginner
+25,Big Data Fundamentals,Data Engineering,big-data hadoop spark,Intermediate
+26,Apache Spark with Python,Data Engineering,spark pyspark big-data,Advanced
+27,Git and GitHub Basics,DevOps,git github version-control,Beginner
+28,CI/CD with Jenkins,DevOps,jenkins automation devops,Intermediate
+29,Docker Essentials,DevOps,docker containers deployment,Intermediate
+30,Kubernetes for Beginners,DevOps,kubernetes orchestration clusters,Intermediate
+31,C Programming Basics,Programming,c language basics intro,Beginner
+32,C++ Object Oriented Programming,Programming,cpp oops advanced,Intermediate
+33,Java Programming,Programming,java oops backend,Beginner
+34,Spring Boot Backend Development,Programming,springboot java backend,Intermediate
+35,R Programming Basics,Data Science,r statistics data-analysis,Beginner
+36,Data Visualization with Power BI,Analytics,powerbi visualization dash,Intermediate
+37,Tableau for Beginners,Analytics,tableau charts visualization,Beginner
+38,Blockchain Basics,Blockchain,blockchain crypto bitcoin,Beginner
+39,Solidity Smart Contracts,Blockchain,solidity ethereum smart-contracts,Intermediate
+40,Digital Marketing Basics,Marketing,digital-marketing seo social-media,Beginner
+41,SEO Advanced Techniques,Marketing,seo ranking optimization,Advanced
+42,Content Writing Mastery,Marketing,content-writing copywriting,Beginner
+43,Business Analytics,Analytics,business-analysis data-analytics,Intermediate
+44,Entrepreneurship Essentials,Business,startup business planning,Beginner
+45,Finance for Non-Finance,Business,finance basics accounting,Beginner
+46,HR Management Basics,Management,hr recruitment training,Beginner
+47,Project Management with Agile,Management,agile scrum project-management,Intermediate
+48,Supply Chain Management,Management,logistics supply-chain operations,Intermediate
+49,Soft Skills and Communication,Personal Development,communication soft-skills personality,Beginner

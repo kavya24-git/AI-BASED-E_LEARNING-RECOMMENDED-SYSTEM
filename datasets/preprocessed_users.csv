@@ -1,0 +1,51 @@
+user_id,age,gender,education_level,interests,skill_level,gender_enc,education_level_enc,skill_level_enc
+U001,18,Female,High School,"programming, web development",beginner,0,1,1
+U002,20,Male,Undergraduate,"ai, machine learning",intermediate,1,3,2
+U003,22,Female,Undergraduate,"design, ui ux",beginner,0,3,1
+U004,25,Male,Bachelor,"data science, python",intermediate,1,0,2
+U005,19,Female,High School,"cybersecurity, networking",beginner,0,1,1
+U006,23,Male,Postgraduate,"web development, javascript",advanced,1,2,0
+U007,21,Female,Undergraduate,"ai, deep learning",intermediate,0,3,2
+U008,24,Male,Bachelor,"python, algorithms",beginner,1,0,1
+U009,20,Female,Undergraduate,"graphic design, ui",intermediate,0,3,2
+U010,27,Male,Postgraduate,"cloud computing, devops",advanced,1,2,0
+U011,18,Female,High School,"c programming, basics",beginner,0,1,1
+U012,19,Male,Undergraduate,"data analysis, excel",beginner,1,3,1
+U013,22,Female,Bachelor,"full stack, react",intermediate,0,0,2
+U014,23,Male,Undergraduate,"machine learning, python",intermediate,1,3,2
+U015,26,Female,Postgraduate,"nlp, ai",advanced,0,2,0
+U016,21,Male,Undergraduate,"ethical hacking, cybersecurity",intermediate,1,3,2
+U017,20,Female,High School,"html, css",beginner,0,1,1
+U018,25,Male,Bachelor,"big data, hadoop",advanced,1,0,0
+U019,22,Female,Undergraduate,"android development, java",intermediate,0,3,2
+U020,23,Male,Bachelor,"statistics, data science",intermediate,1,0,2
+U021,19,Female,High School,"python basics, coding",beginner,0,1,1
+U022,24,Male,Postgraduate,"cloud, aws",advanced,1,2,0
+U023,20,Female,Undergraduate,"ml, data mining",intermediate,0,3,2
+U024,21,Male,Undergraduate,"blockchain, crypto",beginner,1,3,1
+U025,27,Female,Postgraduate,"project management, agile",advanced,0,2,0
+U026,22,Male,Bachelor,"javascript, frontend",intermediate,1,0,2
+U027,18,Female,High School,"scratch programming, basics",beginner,0,1,1
+U028,23,Male,Undergraduate,"ui design, figma",beginner,1,3,1
+U029,24,Female,Bachelor,"python, pandas",intermediate,0,0,2
+U030,21,Male,Undergraduate,"computer networks, ccna",intermediate,1,3,2
+U031,20,Female,High School,"sql, databases",beginner,0,1,1
+U032,26,Male,Postgraduate,"cloud, virtualization",advanced,1,2,0
+U033,23,Female,Undergraduate,"software testing, qa",intermediate,0,3,2
+U034,25,Male,Bachelor,"iot, embedded systems",advanced,1,0,0
+U035,19,Female,High School,"excel, analytics",beginner,0,1,1
+U036,22,Male,Undergraduate,"data structures, java",intermediate,1,3,2
+U037,24,Female,Bachelor,"ml, python",intermediate,0,0,2
+U038,21,Male,Undergraduate,"ruby, backend",beginner,1,3,1
+U039,23,Female,Postgraduate,"ai, robotics",advanced,0,2,0
+U040,20,Male,High School,"web basics, html",beginner,1,1,1
+U041,25,Female,Bachelor,"digital marketing, seo",intermediate,0,0,2
+U042,22,Male,Undergraduate,"game development, unity",beginner,1,3,1
+U043,24,Female,Postgraduate,"cloud security, devops",advanced,0,2,0
+U044,19,Male,High School,"c++, programming",beginner,1,1,1
+U045,20,Female,Undergraduate,"data visualization, tableau",intermediate,0,3,2
+U046,23,Male,Bachelor,"python, deep learning",advanced,1,0,0
+U047,21,Female,Undergraduate,"frontend, react",intermediate,0,3,2
+U048,26,Male,Postgraduate,"research, ai",advanced,1,2,0
+U049,22,Female,Bachelor,"mobile development, kotlin",intermediate,0,0,2
+U050,19,Male,High School,programming basics,beginner,1,1,1

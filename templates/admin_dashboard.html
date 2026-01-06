@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body class="admin-area">
+
+
+<div class="container mt-5">
+    <h2 class="admin-title">Welcome Admin 👑</h2>
+
+    <hr>
+
+    <!-- TABS -->
+    <ul class="nav nav-tabs admin-tabs" id="adminTabs">
+
+        <li class="nav-item"><a class="nav-link active" data-bs-toggle="tab" href="#view_courses">📘 View Courses</a></li>
+        <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#add_course">➕ Add Course</a></li>
+        <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#delete_course">❌ Delete Course</a></li>
+        <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#analytics">📊 Analytics</a></li>
+    </ul>
+
+    <div class="tab-content mt-4">
+
+        <!-- VIEW COURSES TAB -->
+        <div class="tab-pane fade show active" id="view_courses">
+            <h4 class="admin-section-title">📘 All Courses</h4>
+
+            <table class="table table-bordered mt-3">
+                <tr>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Category</th>
+                    <th>Tags</th>
+                </tr>
+                {% for c in courses %}
+                <tr>
+                    <td>{{ c.course_id }}</td>
+                    <td>{{ c.title }}</td>
+                    <td>{{ c.category }}</td>
+                    <td>{{ c.tags }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+
+        <!-- ADD COURSE TAB -->
+        <div class="tab-pane fade" id="add_course">
+            <h4 class="admin-section-title">➕ Add New Course</h4>
+            <form method="POST" action="/admin_add_course">
+                <input type="number" name="course_id" class="form-control mb-2" placeholder="Course ID" required>
+                <input type="text" name="title" class="form-control mb-2" placeholder="Title" required>
+                <input type="text" name="category" class="form-control mb-2" placeholder="Category" required>
+                <input type="text" name="tags" class="form-control mb-2" placeholder="Tags" required>
+                <input type="text" name="meta" class="form-control mb-2" placeholder="Description" required>
+                <input type="text" name="level" class="form-control mb-2" placeholder="Level" required>
+                <button class="btn btn-success">Add Course</button>
+            </form>
+        </div>
+
+        <!-- DELETE COURSE TAB -->
+        <div class="tab-pane fade" id="delete_course">
+            <h4 class="admin-section-title">❌ Delete Course</h4>
+            
+            <form method="POST" action="/admin_delete_course">
+                <input type="number" name="course_id" class="form-control mb-2" placeholder="Enter Course ID" required>
+                <button class="btn btn-danger">Delete</button>
+            </form>
+
+            {% if msg %}
+            <div class="alert alert-info mt-3">{{ msg }}</div>
+            {% endif %}
+        </div>
+
+        <!-- ANALYTICS TAB -->
+        <div class="tab-pane fade" id="analytics">
+            <h4 class="admin-section-title">📊 Analytics Dashboard</h4>
+
+            <!-- CATEGORY GRAPH -->
+            <h5 class="mt-3 analytics-title">Category-wise Course Count</h5>
+
+            <div style="width: 450px; height: 260px;">
+                <canvas id="categoryChart"></canvas>
+            </div>
+
+            <!-- LEVEL GRAPH -->
+            <h5 class="mt-4 chart-title">Course Level Distribution</h5>
+            <div style="width: 350px; height: 260px;">
+                <canvas id="levelChart"></canvas>
+            </div>
+
+            <!-- SUMMARY -->
+            <h5 class="mt-4 analytics-title">Total Summary</h5>
+            <ul class="list-group mt-2" style="max-width: 300px;">
+                <li class="list-group-item">Total Courses: {{ total_courses }}</li>
+                <li class="list-group-item">Total Users: {{ total_users }}</li>
+                <li class="list-group-item">Total Searches: {{ searches }}</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <a href="/admin_logout" class="btn btn-dark mt-4">Logout</a>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    /* ---------------- Category Chart (Bar) — TEAL + AQUA (with white labels) ---------------- */
+    var categoryLabels = {{ category_labels|safe }};
+    var categoryCounts = {{ category_counts|safe }};
+
+    new Chart(document.getElementById("categoryChart"), {
+        type: "bar",
+        data: {
+            labels: categoryLabels,
+            datasets: [{
+                label: "Courses",
+                data: categoryCounts,
+                backgroundColor: "rgba(20, 184, 166, 0.8)",   // Teal
+                borderColor: "rgba(6, 182, 212, 1)",          // Aqua
+                borderWidth: 2
+            }]
+        },
+        options: {
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    labels: { color: "black" }   // legend text white
+                },
+                title: {
+                    display: false
+                }
+            },
+            scales: {
+                x: {
+                    ticks: {
+                        color: "black",        // x-axis labels (category names)
+                        font: { size: 12 }
+                    },
+                    grid: {
+                        color: "rgba(255,255,255,0.05)"  // subtle grid line
+                    }
+                },
+                y: {
+                    ticks: {
+                        color: "black",        // y-axis numbers
+                        font: { size: 12 }
+                    },
+                    grid: {
+                        color: "rgba(255,255,255,0.06)"
+                    },
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+    /* ---------------- Level Chart (Pie) — TEAL + AQUA + MINT (legend white) ---------------- */
+    var levelLabels = {{ level_labels|safe }};
+    var levelCounts = {{ level_counts|safe }};
+
+    new Chart(document.getElementById("levelChart"), {
+        type: "pie",
+        data: {
+            labels: levelLabels,
+            datasets: [{
+                label: "Levels",
+                data: levelCounts,
+                backgroundColor: [
+                   "rgba(196, 181, 253, 0.9)",  // Light Lavender
+                   "rgba(244, 114, 182, 0.9)",  // Pastel Pink
+                   "rgba(125, 211, 252, 0.9)"   // Soft Light Blue
+                ],
+                borderColor: "rgba(255,255,255,1)",
+                borderWidth: 2
+            }]
+        },
+        options: {
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    labels: { color: "black" }   // legend text white
+                },
+                tooltip: {
+                    bodyColor: "black",
+                    titleColor: "black"
+                }
+            }
+        }
+    });
+</script>
+ 
+
+
+</body>
+</html>

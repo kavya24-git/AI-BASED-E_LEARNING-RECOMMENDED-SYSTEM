@@ -1,0 +1,104 @@
+/* ---- FIXED FULL SCREEN IMAGE BACKGROUND ---- */
+body {
+    background: url('/static/image/bg.jpg') no-repeat center center fixed !important;
+    background-size: cover !important;
+}
+/* Floating tech lines */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    background: 
+        repeating-linear-gradient(
+            90deg,
+            rgba(255,255,255,0.05) 0px,
+            rgba(255,255,255,0.05) 1px,
+            transparent 2px,
+            transparent 60px
+        );
+
+    animation: moveLines 12s linear infinite;
+    z-index: -1;
+}
+
+/* UP–DOWN LINE MOVEMENT */
+@keyframes moveLines {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-200px); }
+}
+
+/* GLASS CARD */
+.container-box {
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(12px);
+    padding: 30px;
+    width: 420px;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+    color: white;
+}
+
+/* Make ALL dashboard text white */
+.dashboard-text,
+.dashboard-text * {
+    color: rgb(10, 9, 9) !important;
+}
+
+/* Make search results text white */
+.results-black,
+.results-black * {
+    color: rgb(7, 6, 6) !important;
+}
+
+/* Force Search Results title to white */
+h2.search-title,
+h2.search-title strong {
+    color: #050505 !important;
+}
+
+/* Fix: show text typed inside the search bar */
+input.search-input {
+    color: black !important;
+}
+
+/* ADMIN TITLES ONLY — MAKE THEM WHITE */
+.admin-title,
+.admin-title *,
+.admin-tabs .nav-link,
+.admin-section-title {
+    color: #0e0c0c !important;
+}
+
+/* Active/Selected tab ki white + underline effect */
+.admin-tabs .nav-link.active {
+    color: rgb(10, 9, 9) !important;
+    background: rgba(255,255,255,0.15) !important;
+    border-bottom: 3px solid #00eaff !important;
+}
+
+/* Other tab links (inactive) visible ga untayi */
+.admin-tabs .nav-link {
+    color: #0e0c0c !important;
+}
+
+/* TABLE TEXT should NOT change — so KEEP default */
+.table td, .table th {
+    color: black !important;
+}
+
+/* Admin Analytics Headings White */
+.analytics-title {
+    color: #0e0d0d !important;
+}
+
+.chart-title {
+    color: black !important;
+}
+.select-title {
+    color: black !important;
+}
